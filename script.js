@@ -1,41 +1,53 @@
 console.log('script running')
 
 // Getting elements
-const billAmount = document.querySelector('.dollar-amt')
+const billAmount = document.querySelector('.bill-input')
 const people = document.querySelector('.ppl-input')
 const tipAmt = document.querySelector('.tip-amt')
-const totalAmt = document.querySelector('.total-amt')
-
+const totalDOM = document.querySelector('.total-amt')
 
 
 console.log(people)
 let tipBtns = document.querySelectorAll('.tip-btn')
-let userInput;
-let userPeople;
+let userBillInput;
+let userPeople = 1;
 let ppAmount;
-let calculation;
+let tipOwed;
+let totalAmountPP;
 
 const getValue = () => {
-    userInput = billAmount.value
+    userBillInput = billAmount.value
 }
 
 const getPeople = () => {
-    userPeople = people.value
+    if (people.value > 1) {
+        userPeople = people.value
+    } else {
+        userPeople = 1
+    }
     console.log(userPeople)
 }
 
+const getTotalAmount = () => {
+    if (userPeople > 1) {
+        totalAmountPP = (parseInt(userBillInput) + parseInt(tipOwed)) / parseInt(userPeople)
+        console.log(userPeople)
+    } else {
+        totalAmountPP = (parseInt(userBillInput) + parseInt(tipOwed)) / 1
+    }
 
+}
 
 billAmount.addEventListener('input', getValue)
 
 const calculateTip = (id) => {
-    let tipPercent = parseInt(id)/100
-    calculation = userInput * tipPercent
-    ppAmount = calculation/userPeople
+    let tipPercent = parseInt(id) / 100
+    tipOwed = userBillInput * tipPercent
+    ppAmount = tipOwed / userPeople
     console.log('people amount' + ppAmount)
-    console.log(userInput)
+    console.log(userBillInput)
     console.log(tipPercent)
-    console.log(calculation)
+    console.log(tipOwed)
 
 }
 
@@ -44,7 +56,9 @@ tipBtns.forEach(button => {
     button.addEventListener('click', () => {
         calculateTip(button.id)
         getPeople()
-        tipAmt.textContent = calculation/userPeople
+        getTotalAmount()
+        tipAmt.textContent = `$ ${parseInt(tipOwed / userPeople)}`
+        totalDOM.textContent = `$${totalAmountPP}`
 
     })
 
