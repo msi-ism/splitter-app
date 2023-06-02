@@ -11,12 +11,17 @@
 </head>
 
 <body>
+    <div class="title">
   <h1>Splitter</h1>
+  </div>
   <div class="main-container">
     <div class='user-input-container'>
-      <div class="bill-input-box">
+      <div class="data-input-container">
+        <div class="bill-entry-container">
         <h4>Bill</h4>
-        <input class='bill-input'type='number' placeholder='0'></input>
+        <input class='dollar-amt'type='number' placeholder='0'></input>
+    </div>
+    <div class="tip-selection-box">
         <h4>Select Tip %</h4>
         <div class="tip-percentage">
           <div class="tip-btn-padding">
@@ -38,23 +43,30 @@
             <input class="custom-tip" type='number' placeholder='Custom'></input>
         </div>
         </div>
-      </div>
+    </div>
       <div class="ppl-number">
         <h4>Number of people</h4>
         <input class='ppl-input' type='number' placeholder='0'></input>
       </div>
+    </div>
     </div>
 
     <div class='app-output-container'>
       <div class="output-padding">
         <div class="output-wrapper">
           <div class="tip-box">
-            <p>Tip Amount/Person</p>
-            <p class='tip-amt'>$0.00</p>
+            <div class="tip-text">
+            <h5>Tip Amount/Person</h5>
+            <p>/ Person</p>
+            </div>
+            <h5 class='tip-amt'>$0.00</h5>
           </div>
           <div class="total-box">
-            <p>Total/Person</p>
-            <p class='total-amt'>$0.00</p>
+            <div class="total-text">
+            <h5>Total/Person</h5>
+            <p>/ Person</p>
+        </div>
+            <h5 class='total-amt'>$0.00</h5>
           </div>
         </div>
         <div class="reset-div">

@@ -1,7 +1,7 @@
 console.log('script running')
 
 // Getting elements
-const billAmount = document.querySelector('.bill-input')
+const billAmount = document.querySelector('.dollar-amt')
 const people = document.querySelector('.ppl-input')
 const tipAmt = document.querySelector('.tip-amt')
 const totalDOM = document.querySelector('.total-amt')
