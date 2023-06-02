@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+  <h1>Splitter</h1>
+  <div class="split-wrapper">
+    <div class='user-input'>
+      <div class="bill-input">
+        <h4>Bill</h4>
+        <input class='dollar-amt'type='number' placeholder='0'></input>
+        <h4>Select Tip %</h4>
+        <div class="tip-percentage">
+          <div class="tip-btn-padding">
+            <button id='10' class="tip-btn">10%</button>
+          </div>
+          <div class="tip-btn-padding">
+            <button id='15' class="tip-btn">15%</button>
+          </div>
+          <div class="tip-btn-padding">
+            <button id='20' class="tip-btn">20%</button>
+          </div>
+          <div class="tip-btn-padding">
+            <button id='25' class="tip-btn">25%</button>
+          </div>
+          <div class="tip-btn-padding">  
+            <button id='50' class="tip-btn">50%</button>
+          </div>
+          <div class="tip-btn-padding">  
+            <input class="custom-tip" type='number' placeholder='Custom'></input>
+        </div>
+        </div>
+      </div>
+      <div class="ppl-number">
+        <h4>Number of people</h4>
+        <input class='ppl-input' type='number' placeholder='0'></input>
+      </div>
+    </div>
+
+    <div class='app-output'>
+      <div class="output-padding">
+        <div class="output-wrapper">
+          <div class="tip-box">
+            <p>Tip Amount/Person</p>
+            <p class='tip-amt'>$0.00</p>
+          </div>
+          <div class="total-box">
+            <p>Total/Person</p>
+            <p class='total-amt'>$0.00</p>
+          </div>
+        </div>
+        <div class="reset-div">
+          <button class='reset-btn'>Reset</button>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+
+</body>
+
+</html>
