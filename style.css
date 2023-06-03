@@ -13,13 +13,7 @@ body {
   
   }
 
-/* Removes the spin buttons from the bill input - I searched for this */
 
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
 input[type='number'] {
     margin: 0;
@@ -85,17 +79,23 @@ p {
   }
 
   .bill-entry-container > .dollar-amt {
+    color: #00464b;
     box-shadow: 1px 1px 5px rgb(44, 40, 40);
     border-radius: 5px;
-    padding: 0px 5px;
     border: none;
+    background: url("icons/person.png") no-repeat;
+    background-position: 10px;
+    background-size: 30px;
   }
+
   .ppl-number > .ppl-input {
+    color: #00464b;
     box-shadow: 1px 1px 5px rgb(44, 40, 40);
     border-radius: 5px;
-    padding: 0px 5px;
     border: none;
-
+    background: url("icons/dollarsign.png") no-repeat;
+    background-position: 10px;
+    background-size: 30px;
   }
 
 
@@ -134,7 +134,12 @@ p {
     cursor: pointer;
     border-radius: 5px;
     font-size: 20px;
-  
+  }
+
+  .tip-btn:hover {
+    background-color:#27c2ad;
+    color: #00464b;
+
   }
 
   input {
@@ -143,6 +148,7 @@ p {
     height: 70%;
     width: 100%;
     background-color: #f3f8fb;
+
   }
   input::placeholder {
     padding-right: 10px;
