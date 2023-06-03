@@ -9,11 +9,13 @@ const totalDOM = document.querySelector('.total-amt')
 const errorText = document.querySelector('.error-text')
 const peopleErrorText = document.querySelector('.ppl-error-text')
 const resetBtn = document.querySelector('.reset-btn')
+const tipBtns = document.querySelectorAll('.tip-btn')
+
+console.log(tipBtns)
 
 
 
 
-let tipBtns = document.querySelectorAll('.tip-btn')
 let userBillInput;
 let userPeople;
 let ppAmount;
@@ -25,12 +27,14 @@ let customTip;
 
 const getValue = () => {
     userBillInput = billAmount.value
+    billAmount.style.border = 'none'
     errorText.style.display = 'none'
 }
 
 const getPeople = () => {
-        userPeople = people.value
-        peopleErrorText.style.display = 'none'
+    userPeople = people.value
+    people.style.border = 'none'
+    peopleErrorText.style.display = 'none'
     console.log(userPeople)
 }
 
@@ -53,6 +57,10 @@ people.addEventListener('input', getPeople)
 customTipInput.addEventListener('input', getCustomTip)
 
 
+
+
+
+
 const validateBill = () => {
     if (billAmount.value >= 1) {
         return true
@@ -62,8 +70,6 @@ const validateBill = () => {
         return false
     }
 }
-
-
 
 const calculateTip = (id) => {
     if (billAmount.value < 1) {
@@ -113,11 +119,22 @@ const calculateCustomTip = (id) => {
     }
 }
 
+const setActive = (evt) => {
+    let buttons = tipBtns
+    for (let i = 0; i <= tipBtns.length; i++) {
+        if (buttons[i].classList.contains('active')) {
+            buttons[i].classList.remove('active')
+        }
+        evt.currentTarget.classList.add('active')
+    }
+}
+
 
 
 tipBtns.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (evt) => {
         calculateTip(button.id)
+        setActive(evt)
     })
 
 })
@@ -137,6 +154,8 @@ const resetApp = () => {
     console.log('button working')
     billAmount.value = null
     people.value = null
+    billAmount.style.border = 'none'
+    people.style.border = 'none'
     customTipInput.value = null
     tipAmt.textContent = `$${zero.toFixed(2)}`
     totalDOM.textContent = `$${zero.toFixed(2)}`
