@@ -40,10 +40,10 @@ const getPeople = () => {
 
 const getTotalAmount = () => {
     if (userPeople > 1) {
-        totalAmountPP = (parseInt(userBillInput) + parseInt(tipOwed)) / parseInt(userPeople)
+        totalAmountPP = (parseInt(userBillInput) + parseFloat(tipOwed)) / parseInt(userPeople)
         console.log(userPeople)
     } else {
-        totalAmountPP = (parseInt(userBillInput) + parseInt(tipOwed)) / 1
+        totalAmountPP = (parseInt(userBillInput) + parseFloat(tipOwed)) / 1
     }
 }
 
@@ -54,7 +54,7 @@ const getCustomTip = () => {
 
 billAmount.addEventListener('input', getValue)
 people.addEventListener('input', getPeople)
-customTipInput.addEventListener('input', getCustomTip)
+
 
 
 
@@ -90,7 +90,7 @@ const calculateTip = (id) => {
         tipOwed = userBillInput * tipPercent
         ppAmount = tipOwed / userPeople
         getTotalAmount()
-        tipAmt.textContent = `$ ${parseInt(tipOwed / userPeople).toFixed(2)}`
+        tipAmt.textContent = `$ ${parseFloat(tipOwed / userPeople).toFixed(2)}`
         totalDOM.textContent = `$ ${totalAmountPP.toFixed(2)}`
     }
 }
@@ -110,11 +110,11 @@ const calculateCustomTip = (id) => {
         people.style.border = '2px solid rgb(229, 166, 89)'
 
     } else if (billAmount.value > 0 && userPeople > 0) {
-        let tipPercent = parseInt(id) / 100
+        customTip = parseInt(customTipInput.value) / 100
         tipOwed = userBillInput * customTip
         ppAmount = tipOwed / userPeople
         getTotalAmount()
-        tipAmt.textContent = `$ ${parseInt(tipOwed / userPeople).toFixed(2)}`
+        tipAmt.textContent = `$ ${parseFloat(tipOwed / userPeople).toFixed(2)}`
         totalDOM.textContent = `$ ${totalAmountPP.toFixed(2)}`
     }
 }
@@ -159,7 +159,14 @@ const resetApp = () => {
     customTipInput.value = null
     tipAmt.textContent = `$${zero.toFixed(2)}`
     totalDOM.textContent = `$${zero.toFixed(2)}`
+    let buttons = tipBtns
+    for (let i = 0; i <= tipBtns.length; i++) {
+        if (buttons[i].classList.contains('active')) {
+            buttons[i].classList.remove('active')
+        }
+    }
 
 }
 resetBtn.addEventListener('click', resetApp)
+customTipInput.addEventListener('input', calculateCustomTip)
 
