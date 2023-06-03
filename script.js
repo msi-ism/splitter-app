@@ -73,7 +73,6 @@ const calculateTip = (id) => {
         errorText.textContent = "Can't Be Zero"
         console.log('should be errors')
         billAmount.style.border = '2px solid rgb(229, 166, 89)'
-
     }
     if (people.value < 1) {
         peopleErrorText.style.display = 'flex'
@@ -117,12 +116,14 @@ const calculateCustomTip = (id) => {
 
 const setActive = (evt) => {
     let buttons = tipBtns
+    if (billAmount.value != '' && people.value != '') {
     for (let i = 0; i <= tipBtns.length; i++) {
         if (buttons[i].classList.contains('active')) {
             buttons[i].classList.remove('active')
         }
         evt.currentTarget.classList.add('active')
     }
+}
 }
 
 
@@ -165,7 +166,6 @@ const resetApp = () => {
     }
 
 }
-
 
 if (billAmount.value == '' || people.value == '') {
     customTipInput.addEventListener('keypress', (evt) => {
