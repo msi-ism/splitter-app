@@ -217,6 +217,7 @@ p {
     background-color:#27c2ad;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 
   }
 

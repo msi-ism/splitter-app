@@ -8,9 +8,11 @@ const tipAmt = document.querySelector('.tip-amt')
 const totalDOM = document.querySelector('.total-amt')
 const errorText = document.querySelector('.error-text')
 const peopleErrorText = document.querySelector('.ppl-error-text')
+const resetBtn = document.querySelector('.reset-btn')
 
 
-console.log(people)
+
+
 let tipBtns = document.querySelectorAll('.tip-btn')
 let userBillInput;
 let userPeople;
@@ -124,9 +126,21 @@ tipBtns.forEach(button => {
 document.addEventListener('keypress', (e) => {
     let name = e.key
     let code = e.code
-    console.log(e.key)
     if (name === 'Enter') {
         calculateCustomTip()
     }
 })
+
+
+const resetApp = () => {
+    let zero = 0
+    console.log('button working')
+    billAmount.value = null
+    people.value = null
+    customTipInput.value = null
+    tipAmt.textContent = `$${zero.toFixed(2)}`
+    totalDOM.textContent = `$${zero.toFixed(2)}`
+
+}
+resetBtn.addEventListener('click', resetApp)
 
