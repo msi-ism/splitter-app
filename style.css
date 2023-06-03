@@ -31,18 +31,21 @@ h4 {
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 10px;
+    color: #a7a6a6;
 
 }
 
 h5 {
     font-size: 18px;
     margin: 3px;
+   
 }
 
 p {
     font-size: 14px;
     margin: 0px;
     padding: 0px;
+    color: #a3b7c3;
 }
 
 
@@ -60,13 +63,12 @@ p {
     flex-wrap: wrap;
     width: 1000px;
     height: 30vw;
-
     background-color: white;
 
   }
   
   .title {
-    margin-top: 100px;
+
   }
 
   .main-container > .user-input-container {
@@ -76,7 +78,6 @@ p {
   }
 
   .user-input-container > .data-input-container {
-
     height: 95%;
     display: flex;
     flex-direction: column;
@@ -86,10 +87,15 @@ p {
   .bill-entry-container > .dollar-amt {
     box-shadow: 1px 1px 5px rgb(44, 40, 40);
     border-radius: 5px;
+    padding: 0px 5px;
+    border: none;
   }
   .ppl-number > .ppl-input {
     box-shadow: 1px 1px 5px rgb(44, 40, 40);
     border-radius: 5px;
+    padding: 0px 5px;
+    border: none;
+
   }
 
 
@@ -101,6 +107,23 @@ p {
     flex-wrap: wrap;
     justify-content: left;
   }
+
+  .bill-entry-container > .input-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .ppl-number > .input-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .input-info > .error-text, .ppl-error-text {
+    color: rgb(229, 166, 89);
+    display: none;
+  }
+
 
 .tip-btn {
     background-color: #00464b;
@@ -117,9 +140,9 @@ p {
   input {
     text-align: right;
     font-size: 18px;
-    height: 30px;
+    height: 70%;
     width: 100%;
-    padding-right: 10px;
+    background-color: #f3f8fb;
   }
   input::placeholder {
     padding-right: 10px;
@@ -183,8 +206,11 @@ p {
     width: 100%;
     align-items: baseline;
     padding: 10px;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Arial';
+    background-color:#27c2ad;
+    border: none;
+    border-radius: 5px;
 
   }
 
@@ -196,6 +222,10 @@ p {
     justify-content: space-between;
     margin: 0;
     padding: 0;
+  }
+
+  .tip-amt, .total-amt {
+    color: #27c2ad;
   }
 
   .tip-box > .tip-text {

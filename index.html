@@ -12,14 +12,17 @@
 
 <body>
     <div class="title">
-  <h1>Splitter</h1>
+  <h1>SPLITER</h1>
   </div>
   <div class="main-container">
     <div class='user-input-container'>
       <div class="data-input-container">
         <div class="bill-entry-container">
-        <h4>Bill</h4>
-        <input class='dollar-amt'type='number' placeholder='0'></input>
+          <div class="input-info">
+            <h4>Bill</h4>
+            <h5 class="error-text"></h5>
+          </div>
+        <input class='dollar-amt'type='number' placeholder='0' required></input>
     </div>
     <div class="tip-selection-box">
         <h4>Select Tip %</h4>
@@ -40,12 +43,15 @@
             <button id='50' class="tip-btn">50%</button>
           </div>
           <div class="tip-btn-padding">  
-            <input class="custom-tip" type='number' placeholder='Custom'></input>
+            <input class="custom-tip" type='number' placeholder='Custom' required></input>
         </div>
         </div>
     </div>
       <div class="ppl-number">
+        <div class="input-info">
         <h4>Number of people</h4>
+        <h5 class="ppl-error-text"></h5>
+      </div>
         <input class='ppl-input' type='number' placeholder='0'></input>
       </div>
     </div>
