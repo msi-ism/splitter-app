@@ -164,6 +164,11 @@ p {
     justify-content: space-between;
   }
 
+  .bill-entry-container > .input-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .input-info > .error-text, .ppl-error-text {
     color: rgb(229, 166, 89);
     display: none;
