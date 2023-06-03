@@ -57,10 +57,6 @@ people.addEventListener('input', getPeople)
 
 
 
-
-
-
-
 const validateBill = () => {
     if (billAmount.value >= 1) {
         return true
