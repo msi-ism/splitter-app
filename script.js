@@ -109,7 +109,7 @@ const calculateCustomTip = (id) => {
         console.log('should be errors')
         people.style.border = '2px solid rgb(229, 166, 89)'
 
-    } else if (billAmount.value > 0 && userPeople > 0) {
+    } else if (billAmount.value > 0 && userPeople > 0 && customTipInput.value > 0) {
         customTip = parseInt(customTipInput.value) / 100
         tipOwed = userBillInput * customTip
         ppAmount = tipOwed / userPeople
