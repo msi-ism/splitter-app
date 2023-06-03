@@ -152,6 +152,8 @@ const resetApp = () => {
     people.value = null
     billAmount.style.border = 'none'
     people.style.border = 'none'
+    errorText.style.display = 'none'
+    peopleErrorText.style.display = 'none'
     customTipInput.value = null
     tipAmt.textContent = `$${zero.toFixed(2)}`
     totalDOM.textContent = `$${zero.toFixed(2)}`
@@ -163,6 +165,27 @@ const resetApp = () => {
     }
 
 }
+
+
+if (billAmount.value == '' || people.value == '') {
+    customTipInput.addEventListener('keypress', (evt) => {
+        if (billAmount.value == '') {
+            evt.preventDefault()
+            errorText.style.display = 'flex'
+            errorText.textContent = "Can't Be Zero"
+            billAmount.style.border = '2px solid rgb(229, 166, 89)'
+        }
+        if (people.value == '') {
+            evt.preventDefault()
+            peopleErrorText.style.display = 'flex'
+            peopleErrorText.textContent = "Can't Be Zero"
+            people.style.border = '2px solid rgb(229, 166, 89)'
+        }
+
+
+    })
+}
+
 resetBtn.addEventListener('click', resetApp)
 customTipInput.addEventListener('input', calculateCustomTip)
 
