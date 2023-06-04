@@ -168,6 +168,7 @@ const resetApp = () => {
     let zero = 0
     billAmount.value = null
     people.value = null
+    currentTip = null
     billAmount.style.border = 'none'
     people.style.border = 'none'
     errorText.style.display = 'none'
