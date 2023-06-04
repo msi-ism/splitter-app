@@ -345,7 +345,7 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    gap: 40px;
+    gap: 80px;
     flex-wrap: wrap;
     height: auto;
     width: 80vw;
