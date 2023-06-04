@@ -333,11 +333,24 @@ p {
 @media only screen and (max-width: 900px) {
   body {
     overflow-x: hidden;
-    height: 100vh;
+    display: flex;
+    height: 100%;
+    width: 100vw;
     margin: 0;
     padding: 0;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 50px 0px;
+  }
+
+  input {
+    text-align: right;
+    font-size: 18px;
+    height: 45px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: var(--whitesmoke);
+    outline-color: var(--kindatorquoise);
   }
 
   .main-container {
@@ -345,10 +358,11 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    gap: 80px;
+    gap: 40px;
     flex-wrap: wrap;
     height: auto;
     width: 80vw;
+  
   }
 
   .main-container > .user-input-container {
@@ -396,3 +410,5 @@ p {
   padding-bottom: 15px;
 }
 }
+
+

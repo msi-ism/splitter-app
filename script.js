@@ -190,4 +190,3 @@ if (billAmount.value == '' || people.value == '') {
 resetBtn.addEventListener('click', resetApp)
 customTipInput.addEventListener('input', calculateCustomTip)
 
-
