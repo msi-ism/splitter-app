@@ -1,69 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap");
 
-
+/* ^ Palette */
 :root {
---pastelblue: #c5e4e7;
---greenavy: #00474b;
---kindatorquoise: #27c2ad;
---whitesmoke: #f3f8fb;
---errororange: #FFB7A5;
-
-
+  --pastelblue: #c5e4e7;
+  --greenavy: #00474b;
+  --kindatorquoise: #27c2ad;
+  --whitesmoke: #f3f8fb;
+  --errororange: #ffb7a5;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Arial';
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--pastelblue);
-  
-  }
+  display: flex;
+  flex-direction: column;
+  font-family: "Arial";
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pastelblue);
+}
 
 input {
   text-align: right;
   font-size: 18px;
   height: 90%;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
   background-color: var(--whitesmoke);
   outline-color: var(--kindatorquoise);
-
-}
-
-
-input[type='number'] {
-    margin: 0;
-    padding: 0;
-    border: none;
 }
 
 h4 {
-    margin-top: 0px;
-    margin-bottom: 10px;
-    color: #a7a6a6;
-    font-weight: 600;
-
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: #a7a6a6;
+  font-weight: 600;
 }
 
 h5 {
-    font-size: 16px;
-    margin: 3px;
-   
+  font-size: 16px;
+  margin: 3px;
 }
 
 p {
-    font-size: 14px;
-    margin: 0px;
-    padding: 0px;
-    color: #a3b7c3;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+  color: #a3b7c3;
 }
 
-.bill-text  {
+/* ^ Site title */
+
+.title {
+  color: #00464b;
+  text-shadow: 0px 1px 2px var(--kindatorquoise);
+}
+
+/* ^ Main-container */
+
+.main-container {
+  padding: 45px 25px;
+  border-radius: 35px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 950px;
+  height: 48%;
+  background-color: white;
+  box-shadow: 0px 1px 2px rgba(44, 40, 40, 0.382);
+  margin-top: 15px;
+}
+
+
+.bill-text {
   font-size: 16px;
 }
 
@@ -72,7 +85,6 @@ p {
   margin-bottom: 2px;
 }
 
-
 .title-text {
   margin: 0;
   padding: 0;
@@ -80,269 +92,255 @@ p {
   margin-bottom: 5px;
 }
 
-  
-  
-  .main-container {
-    padding: 25px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 950px;
-    height: 48%;
-    background-color: white;
-    box-shadow: 0px 1px 2px rgb(44, 40, 40);
-    margin-top: 15px;
 
-  }
-  
-  .title {
-    color: #00464b;
-    text-shadow: 0px 1px 2px var(--kindatorquoise);;
+/* ^ User Input container */
 
-  }
-
-  .main-container > .user-input-container {
-    flex-basis: 45%;
-    height: 100%;
-    width: auto;
-
-  }
-
-  .user-input-container > .data-input-container {
-    height: 95%;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    width: auto;
-  }
-
-  .bill-entry-container > .dollar-amt {
-    color: #00464b;
-    box-shadow: 0px 1px 2px rgba(44, 40, 40, 0.482);
-    border-radius: 5px;
-    border: none;
-    background: url("icons/dollarsign.png"),  var(--whitesmoke);
-    background-repeat: no-repeat;
-    background-position: 10px;
-    background-size: 30px;
-    font-weight: bold;
-    padding-right: 10px;
-  }
-
-  .ppl-number > .ppl-input {
-    color: #00464b;
-    box-shadow: 0px 1px 2px rgba(44, 40, 40, 0.471);
-    border-radius: 5px;
-    border: none;
-    background: url("icons/person.png"), var(--whitesmoke);
-    background-repeat: no-repeat;
-    background-position: 10px;
-    background-size: 30px;
-    font-weight: bold;
-    padding-right: 10px;
-  }
-
-  .dollar-amt::placeholder {
-    padding-right: 5px;
-  }
-  .ppl-input::placeholder {
-    padding-right: 5px;
-  }
-
-  .tip-selection-box > .tip-percentage {
-    margin: 0;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-  }
-
-  .tip-selection-box {
-    margin-bottom: -25px;
-  }
-
-  .bill-entry-container > .input-info {
-    display: flex;
-
-
-  }
-
-
-  .ppl-number > .input-info {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .bill-entry-container > .input-info {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .input-info > .error-text, .ppl-error-text {
-    color: var(--errororange);
-    display: none;
-  }
-
-
-.tip-btn {
-    background-color: #00464b;
-    color: white;
-    border: none;
-    padding: 13px;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .tip-btn:hover {
-    background-color:var(--kindatorquoise);
-    color: #00464b;
-
-  }
-
-  .active {
-    background-color:var(--kindatorquoise);
-    color: #00464b;
-
-  }
-
-
-  .tip-btn-padding {
-    width: 29%;
-    padding: 8px;
-
-  }
-
-  .tip-btn-padding > .custom-tip {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    opacity: .75;
-    padding-right: 10px;
-  }
-
-  .custom-tip::placeholder {
-    text-align: center;
-
-  }
-
-.custom-tip::-webkit-input-placeholder { text-align:center; }
-.custom-tip::-webkit-outer-spin-button,
-.custom-tip::-webkit-inner-spin-button {
--webkit-appearance: none;
-margin: 0;
+.main-container > .user-input-container {
+  flex-basis: 45%;
+  height: 100%;
+  width: auto;
 }
 
-  
-  .main-container > .app-output-container {
-    background-color: var(--greenavy);
-    flex-basis: 45%;
-    display: flex;
-    height: auto;
-    width: auto;
-    flex-direction: column;
-    justify-content: space-between;
-    color: white;
-    border-radius: 10px;
-    padding: 10px;
-    font-family: 'Arimo', sans-serif;
+.user-input-container > .data-input-container {
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: auto;
+}
 
-  
-  
+/* ^ Bill amount input */
+
+.bill-entry-container > .dollar-amt {
+  color: #00464b;
+  box-shadow: 0px 1px 2px rgba(44, 40, 40, 0.482);
+  border-radius: 5px;
+  border: none;
+  background: url("icons/dollarsign.png"), var(--whitesmoke);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 10px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+/* ^ People amount input */
+
+.ppl-number > .ppl-input {
+  color: #00464b;
+  box-shadow: 0px 1px 2px rgba(44, 40, 40, 0.471);
+  border-radius: 5px;
+  border: none;
+  background: url("icons/person.png"), var(--whitesmoke);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 15px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.dollar-amt::placeholder {
+  padding-right: 5px;
+}
+.ppl-input::placeholder {
+  padding-right: 5px;
+}
+
+.tip-selection-box > .tip-percentage {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.tip-selection-box {
+  margin-bottom: -25px;
+}
+
+.bill-entry-container > .input-info {
+  display: flex;
+}
+
+.ppl-number > .input-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bill-entry-container > .input-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-info > .error-text,
+.ppl-error-text {
+  color: var(--errororange);
+  display: none;
+}
+
+/* ^ Tip Buttons */
+
+.tip-btn {
+  background-color: #00464b;
+  color: white;
+  border: none;
+  padding: 13px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.tip-btn:hover {
+  background-color: var(--kindatorquoise);
+  color: #00464b;
+}
+
+.active {
+  background-color: var(--kindatorquoise);
+  color: #00464b;
+}
+
+.tip-btn-padding {
+  width: 29%;
+  padding: 8px;
+}
+
+.tip-btn-padding > .custom-tip {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* ^ Center placeholder text in custom field */
+
+.custom-tip::placeholder {
+  text-align: center;
+}
+
+.custom-tip::-webkit-input-placeholder {
+  text-align: center;
+}
+
+/* ^ Disable spin buttons on custom input */
+.custom-tip::-webkit-outer-spin-button,
+.custom-tip::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ^ App Output container */
+
+.main-container > .app-output-container {
+  background-color: var(--greenavy);
+  flex-basis: 45%;
+  display: flex;
+  height: auto;
+  width: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  border-radius: 30px;
+  padding: 10px;
+  font-family: "Arimo", sans-serif;
+}
+
+.app-output-container > .output-padding {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  width: auto;
+}
+
+.output-padding > .output-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tip-box,
+.total-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.tip-amt,
+.total-amt {
+  color: var(--kindatorquoise);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.total-text > p {
+  font-size: 12px;
+  opacity: 0.5;
+}
+.tip-text > p {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+/* ^ Reset Div and buttons */
+
+.app-output-container > .reset-div {
+  display: flex;
+  justify-content: center;
+}
+
+
+.reset-div {
+  background-color: yellow;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.reset-div > button {
+  width: 100%;
+  align-items: baseline;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--kindatorquoise);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #00464b;
+  transition: 0.5s ease;
+}
+
+.reset-div:hover button {
+  opacity: 0.65;
+  color: black;
+}
+
+
+/* ^ Media queries */
+
+@media only screen and (max-width: 900px) {
+  body {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
-  .app-output-container > .output-padding {
-    padding: 10px;
+  .main-container {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     height: 100%;
-    justify-content: space-between;
-    width: auto;
-
-
-  }
-
- .output-padding > .output-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
- }
-
-  .app-output-container > .reset-div {
-    display: flex;
-    justify-content: center;
-  }
-
-  .reset-div > button {
-    width: 100%;
-    align-items: baseline;
-    padding: 10px;
-    font-size: 15px;
-    font-weight: bold;
-    background-color:var(--kindatorquoise);
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    color: #00464b;
-
-  }
-
-  .reset-btn:hover {
-    background-color: yellowgreen;
-
-  }
-
-
-
-
-  .tip-box, .total-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-  }
-
-  .tip-amt, .total-amt {
-    color: var(--kindatorquoise);
-    font-size: 20px;
-    
-  }
-
-  .total-text > p {
-    font-size: 12px;
-  }
-  .tip-text > p {
-    font-size: 12px;
-  }
-
-  .tip-box > .tip-text {
-
-  }
-  
-
-  @media only screen and (max-width: 900px) {
-
-    body {
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-
-    .main-container {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      height: 100%;
-      width: 80vw;
+    width: 80vw;
   }
 
   .main-container > .user-input-container {
@@ -350,7 +348,6 @@ margin: 0;
     height: 100%;
     width: auto;
     flex: 2;
-
   }
 
   .user-input-container > .data-input-container {
@@ -361,7 +358,6 @@ margin: 0;
     width: auto;
   }
 
-
   .main-container > .app-output-container {
     background-color: var(--greenavy);
     flex-basis: 45%;
@@ -373,17 +369,12 @@ margin: 0;
     color: white;
     border-radius: 10px;
     padding: 10px;
-    font-family: 'Arimo', sans-serif;
+    font-family: "Arimo", sans-serif;
     flex: 1.5;
-  
-  
   }
-
 
   .tip-btn-padding {
     width: 27%;
     padding: 8px;
-
   }
-
 }

@@ -38,16 +38,16 @@ const getPeople = () => {
 // ^ Get total amount owed per person
 const getTotalAmount = () => {
     if (userPeople > 1) {
-        totalAmountPP = (parseInt(userBillInput) + parseFloat(tipOwed)) / parseInt(userPeople)
+        totalAmountPP = (parseFloat(userBillInput) + parseFloat(tipOwed)) / parseFloat(userPeople)
         console.log(userPeople)
     } else {
-        totalAmountPP = (parseInt(userBillInput) + parseFloat(tipOwed)) / 1
+        totalAmountPP = (parseFloat(userBillInput) + parseFloat(tipOwed)) / 1
     }
 }
 
 // ^ Get value entered in custom tip box and coverted to a decimal
 const getCustomTip = () => {
-    customTip = parseInt(customTipInput.value) / 100
+    customTip = parseFloat(customTipInput.value) / 100
     console.log(customTip)
 }
 
@@ -83,12 +83,12 @@ const calculateTip = (id) => {
         people.style.border = '2px solid #FFB7A5'
 
     } else if (billAmount.value > 0 && userPeople > 0) {
-        let tipPercent = parseInt(id) / 100
+        let tipPercent = parseFloat(id) / 100
         tipOwed = userBillInput * tipPercent
         ppAmount = tipOwed / userPeople
         getTotalAmount()
-        tipAmt.textContent = `$ ${parseFloat(tipOwed / userPeople).toFixed(2)}`
-        totalDOM.textContent = `$ ${totalAmountPP.toFixed(2)}`
+        tipAmt.textContent = `$${parseFloat(tipOwed / userPeople).toFixed(2)}`
+        totalDOM.textContent = `$${totalAmountPP.toFixed(2)}`
     }
 }
 
@@ -108,12 +108,12 @@ const calculateCustomTip = (id) => {
         people.style.border = '2px solid #FFB7A5'
 
     } else if (billAmount.value > 0 && userPeople > 0 && customTipInput.value > 0) {
-        customTip = parseInt(customTipInput.value) / 100
+        customTip = parseFloat(customTipInput.value) / 100
         tipOwed = userBillInput * customTip
         ppAmount = tipOwed / userPeople
         getTotalAmount()
-        tipAmt.textContent = `$ ${parseFloat(tipOwed / userPeople).toFixed(2)}`
-        totalDOM.textContent = `$ ${totalAmountPP.toFixed(2)}`
+        tipAmt.textContent = `$${parseFloat(tipOwed / userPeople).toFixed(2)}`
+        totalDOM.textContent = `$${totalAmountPP.toFixed(2)}`
     }
 }
 
@@ -128,6 +128,15 @@ const setActive = (evt) => {
         evt.currentTarget.classList.add('active')
     }
 }
+}
+
+const clearActive = () => {
+    let buttons = tipBtns
+    for (let i = 0; i <= tipBtns.length; i++) {
+        if (buttons[i].classList.contains('active')) {
+            buttons[i].classList.remove('active')
+        }
+    }
 }
 
 
@@ -154,12 +163,7 @@ const resetApp = () => {
     customTipInput.value = null
     tipAmt.textContent = `$${zero.toFixed(2)}`
     totalDOM.textContent = `$${zero.toFixed(2)}`
-    let buttons = tipBtns
-    for (let i = 0; i <= tipBtns.length; i++) {
-        if (buttons[i].classList.contains('active')) {
-            buttons[i].classList.remove('active')
-        }
-    }
+    clearActive()
 
 }
 
@@ -185,4 +189,5 @@ if (billAmount.value == '' || people.value == '') {
 
 resetBtn.addEventListener('click', resetApp)
 customTipInput.addEventListener('input', calculateCustomTip)
+
 
