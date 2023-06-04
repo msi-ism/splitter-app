@@ -166,7 +166,6 @@ tipBtns.forEach(button => {
 
 const resetApp = () => {
     let zero = 0
-    console.log('button working')
     billAmount.value = null
     people.value = null
     billAmount.style.border = 'none'
