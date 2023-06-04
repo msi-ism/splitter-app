@@ -346,7 +346,7 @@ p {
     text-align: right;
     font-size: 18px;
     height: 45px;
-    width: 100%;
+    width: 97%;
     margin: 0;
     padding: 0;
     border: none;
@@ -395,6 +395,7 @@ p {
     padding: 10px;
     font-family: "Arimo", sans-serif;
     flex: 1;
+    align-self: center;
   }
 
   .tip-btn-padding {
