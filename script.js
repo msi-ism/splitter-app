@@ -18,6 +18,8 @@ let ppAmount;
 let tipOwed;
 let totalAmountPP;
 let customTip;
+let currentTip;
+let buttons;
 
 
 // ^ Get value of the userBillInput box
@@ -32,14 +34,12 @@ const getPeople = () => {
     userPeople = people.value
     people.style.border = 'none'
     peopleErrorText.style.display = 'none'
-    console.log(userPeople)
 }
 
 // ^ Get total amount owed per person
 const getTotalAmount = () => {
     if (userPeople > 1) {
         totalAmountPP = (parseFloat(userBillInput) + parseFloat(tipOwed)) / parseFloat(userPeople)
-        console.log(userPeople)
     } else {
         totalAmountPP = (parseFloat(userBillInput) + parseFloat(tipOwed)) / 1
     }
@@ -48,7 +48,6 @@ const getTotalAmount = () => {
 // ^ Get value entered in custom tip box and coverted to a decimal
 const getCustomTip = () => {
     customTip = parseFloat(customTipInput.value) / 100
-    console.log(customTip)
 }
 
 
@@ -73,18 +72,16 @@ const calculateTip = (id) => {
     if (billAmount.value < 1) {
         errorText.style.display = 'flex'
         errorText.textContent = "Can't Be Zero"
-        console.log('should be errors')
         billAmount.style.border = '2px solid #FFB7A5'
     }
     if (people.value < 1) {
         peopleErrorText.style.display = 'flex'
         peopleErrorText.textContent = "Can't Be Zero"
-        console.log('should be errors')
         people.style.border = '2px solid #FFB7A5'
 
     } else if (billAmount.value > 0 && userPeople > 0) {
-        let tipPercent = parseFloat(id) / 100
-        tipOwed = userBillInput * tipPercent
+        currentTip = parseFloat(id) / 100
+        tipOwed = userBillInput * currentTip
         ppAmount = tipOwed / userPeople
         getTotalAmount()
         tipAmt.textContent = `$${parseFloat(tipOwed / userPeople).toFixed(2)}`
@@ -92,23 +89,36 @@ const calculateTip = (id) => {
     }
 }
 
+// ^ Calculate tip or throw errors if inputs not valid
+const calculateTipChange = () => {
+if (billAmount.value > 0 && userPeople > 0 && currentTip > 0) {
+        
+        tipOwed = userBillInput * currentTip
+        ppAmount = tipOwed / userPeople
+        getTotalAmount()
+        tipAmt.textContent = `$${parseFloat(tipOwed / userPeople).toFixed(2)}`
+        totalDOM.textContent = `$${totalAmountPP.toFixed(2)}`
+    }
+}
+
+
+
 // ^ Calculate tip with custom amount or throw errors if inputs not valid
-const calculateCustomTip = (id) => {
+const calculateCustomTip = () => {
     if (billAmount.value < 1) {
         errorText.style.display = 'flex'
         errorText.textContent = "Can't Be Zero"
-        console.log('should be errors')
         billAmount.style.border = '2px solid #FFB7A5'
 
     }
     if (people.value < 1) {
         peopleErrorText.style.display = 'flex'
         peopleErrorText.textContent = "Can't Be Zero"
-        console.log('should be errors')
         people.style.border = '2px solid #FFB7A5'
 
     } else if (billAmount.value > 0 && userPeople > 0 && customTipInput.value > 0) {
         customTip = parseFloat(customTipInput.value) / 100
+        currentTip = customTip
         tipOwed = userBillInput * customTip
         ppAmount = tipOwed / userPeople
         getTotalAmount()
@@ -120,24 +130,26 @@ const calculateCustomTip = (id) => {
 
 // ^ Set Active tip button
 const setActive = (evt) => {
-    let buttons = tipBtns
+    buttons = tipBtns
     if (billAmount.value != '' && people.value != '') {
-    for (let i = 0; i <= tipBtns.length; i++) {
-        if (buttons[i].classList.contains('active')) {
-            buttons[i].classList.remove('active')
-        }
-        evt.currentTarget.classList.add('active')
+       buttons.forEach(button => {
+            if (button.classList.contains('active')) {
+                button.classList.remove('active')
+            }
+            evt.currentTarget.classList.add('active')
+        })
+        
     }
-}
 }
 
+// ^ Clear active tip button
 const clearActive = () => {
-    let buttons = tipBtns
-    for (let i = 0; i <= tipBtns.length; i++) {
-        if (buttons[i].classList.contains('active')) {
-            buttons[i].classList.remove('active')
+    buttons = tipBtns
+    buttons.forEach(button => {
+        if (button.classList.contains('active')) {
+            button.classList.remove('active')
         }
-    }
+    })
 }
 
 
@@ -188,6 +200,9 @@ if (billAmount.value == '' || people.value == '') {
 }
 // ^ Event listeners for reset button and to calculate tip as custom tip is entered
 
+
+
 resetBtn.addEventListener('click', resetApp)
 customTipInput.addEventListener('input', calculateCustomTip)
-
+billAmount.addEventListener('change', calculateTipChange)
+people.addEventListener('change', calculateTipChange)
