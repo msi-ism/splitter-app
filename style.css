@@ -75,7 +75,6 @@ p {
   margin-top: 15px;
 }
 
-
 .bill-text {
   font-size: 16px;
 }
@@ -91,7 +90,6 @@ p {
   text-align: center;
   margin-bottom: 5px;
 }
-
 
 /* ^ User Input container */
 
@@ -223,7 +221,7 @@ p {
 
 .custom-tip::placeholder {
   text-align: center;
-  opacity: .75;
+  opacity: 0.75;
 }
 
 .custom-tip::-webkit-input-placeholder {
@@ -301,11 +299,19 @@ p {
   justify-content: center;
 }
 
-
 .reset-div {
   background-color: yellow;
   margin-bottom: 10px;
   border-radius: 5px;
+}
+
+/* ^ Prevent sticky hover on mobile */
+
+@media (hover: hover) {
+  .reset-div:hover button {
+    opacity: .65;
+    color: black;
+  }
 }
 
 .reset-div > button {
@@ -322,12 +328,6 @@ p {
   color: #00464b;
   transition: 0.5s ease;
 }
-
-.reset-div:hover button {
-  opacity: 0.65;
-  color: black;
-}
-
 
 /* ^ Media queries */
 
@@ -363,14 +363,12 @@ p {
     flex-wrap: wrap;
     height: auto;
     width: 80vw;
-  
   }
 
   .main-container > .user-input-container {
     flex-basis: 45%;
     height: 100%;
     width: auto;
- 
   }
 
   .user-input-container > .data-input-container {
@@ -379,7 +377,6 @@ p {
     flex-direction: column;
     gap: 35px;
     width: auto;
-
   }
 
   .main-container > .app-output-container {
@@ -403,14 +400,12 @@ p {
     padding: 8px;
   }
 
-.tip-box,
-.total-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0;
-  padding-bottom: 15px;
+  .tip-box,
+  .total-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding-bottom: 15px;
+  }
 }
-}
-
-
