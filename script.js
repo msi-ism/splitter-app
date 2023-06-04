@@ -114,6 +114,7 @@ const calculateCustomTip = (id) => {
         getTotalAmount()
         tipAmt.textContent = `$${parseFloat(tipOwed / userPeople).toFixed(2)}`
         totalDOM.textContent = `$${totalAmountPP.toFixed(2)}`
+        clearActive()
     }
 }
 
