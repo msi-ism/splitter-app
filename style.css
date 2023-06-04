@@ -309,6 +309,7 @@ p {
 
 .reset-div > button {
   width: 100%;
+  height: 100%;
   align-items: baseline;
   padding: 10px;
   font-size: 15px;
@@ -333,6 +334,9 @@ p {
   body {
     padding-top: 20px;
     padding-bottom: 20px;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
 
   .main-container {
@@ -347,15 +351,18 @@ p {
     flex-basis: 45%;
     height: 100%;
     width: auto;
-    flex: 2;
+    flex: 3;
+
+
   }
 
   .user-input-container > .data-input-container {
     height: 95%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 35px;
     width: auto;
+
   }
 
   .main-container > .app-output-container {
@@ -371,6 +378,8 @@ p {
     padding: 10px;
     font-family: "Arimo", sans-serif;
     flex: 1.5;
+    flex-shrink: 1;
+    margin-top: 15px;
   }
 
   .tip-btn-padding {
