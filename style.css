@@ -332,18 +332,22 @@ p {
 
 @media only screen and (max-width: 900px) {
   body {
-    padding-top: 20px;
-    padding-bottom: 20px;
     overflow-x: hidden;
+    height: 100vh;
     margin: 0;
     padding: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .main-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 40px;
     flex-wrap: wrap;
-    height: 100%;
+    height: auto;
     width: 80vw;
   }
 
@@ -351,9 +355,7 @@ p {
     flex-basis: 45%;
     height: 100%;
     width: auto;
-    flex: 3;
-
-
+ 
   }
 
   .user-input-container > .data-input-container {
@@ -370,20 +372,27 @@ p {
     flex-basis: 45%;
     display: flex;
     height: auto;
-    width: auto;
+    width: 75vw;
     flex-direction: column;
     justify-content: space-between;
     color: white;
     border-radius: 10px;
     padding: 10px;
     font-family: "Arimo", sans-serif;
-    flex: 1.5;
-    flex-shrink: 1;
-    margin-top: 15px;
+    flex: 1;
   }
 
   .tip-btn-padding {
     width: 27%;
     padding: 8px;
   }
+
+.tip-box,
+.total-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding-bottom: 15px;
+}
 }
